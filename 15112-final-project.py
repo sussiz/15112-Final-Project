@@ -309,27 +309,6 @@ def redrawAll(app):
               width=imageWidth / 1.2, height=imageHeight / 1.2, 
               align = 'center', opacity = 50)
 
-    if app.showCam: 
-        if app.currentFrame is not None:
-            # Draw the webcam feed 
-            drawImage(app.currentFrame, 520, 30, width=250, height=200)
-        else:
-            drawLabel("Loading Camera...", 520, 30)
-
-        # DRAW HAND LANDMARKS
-        camX, camY = 520, 30
-        camW, camH = 250, 200
-
-        for handX, handY in app.pointsToDraw:
-            # Scale normalized coordinates to pixel size
-            px = camX + (handX * camW)
-            py = camY + (handY * camH)
-            drawCircle(px, py, 3, fill='maroon', border='black', borderWidth=0.5, opacity = 70)
-        
-        drawRect(520, 30, 252, 202, fill = None, 
-                            border = gradient('black', 'darkGoldenrod', start = 'left-top'), 
-                            borderWidth = 2)
-
 
 
     if app.status == 'start': 
@@ -407,25 +386,25 @@ def redrawAll(app):
     # GEMINI PRO
     ####################################################################################################
         if app.showCam: 
-            #Webcam
-            # drawRect(520, 30, 252, 202, fill = None, 
-            #             border = gradient('black', 'darkGoldenrod', start = 'left-top'), 
-            #             borderWidth = 2)
-            # if app.currentFrame is not None:
-            #     # Draw the webcam feed 
-            #     drawImage(app.currentFrame, 520, 30, width=250, height=200)
-            # else:
-            #     drawLabel("Loading Camera...", 520, 30)
+            Webcam
+            drawRect(520, 30, 252, 202, fill = None, 
+                        border = gradient('black', 'darkGoldenrod', start = 'left-top'), 
+                        borderWidth = 2)
+            if app.currentFrame is not None:
+                # Draw the webcam feed 
+                drawImage(app.currentFrame, 520, 30, width=250, height=200)
+            else:
+                drawLabel("Loading Camera...", 520, 30)
 
-            # # DRAW HAND LANDMARKS
-            # camX, camY = 520, 30
-            # camW, camH = 250, 200
+            # DRAW HAND LANDMARKS
+            camX, camY = 520, 30
+            camW, camH = 250, 200
 
-            # for handX, handY in app.pointsToDraw:
-            #     # Scale normalized coordinates to pixel size
-            #     px = camX + (handX * camW)
-            #     py = camY + (handY * camH)
-            #     drawCircle(px, py, 3, fill='maroon', border='black', borderWidth=0.5, opacity = 70)
+            for handX, handY in app.pointsToDraw:
+                # Scale normalized coordinates to pixel size
+                px = camX + (handX * camW)
+                py = camY + (handY * camH)
+                drawCircle(px, py, 3, fill='maroon', border='black', borderWidth=0.5, opacity = 70)
 
 ####################################################################################################
             drawCircle(645, 130, 50, fill = None, border = 'aqua', 
