@@ -10,6 +10,7 @@ import random
 def distance(x0, y0, x1, y1):
     return ((x1 - x0)**2 + (y1 - y0)**2)**0.5
 
+# GEMINI PRO HELPED DEBUG/CLARIFY LOGIC FOR THE GEOMETRIC FUNCTIONS BELOW
 #Do – fist
 def Do(points): 
     #fingertip landmarks
@@ -386,7 +387,7 @@ def redrawAll(app):
     # GEMINI PRO
     ####################################################################################################
         if app.showCam: 
-            Webcam
+            # Webcam
             drawRect(520, 30, 252, 202, fill = None, 
                         border = gradient('black', 'darkGoldenrod', start = 'left-top'), 
                         borderWidth = 2)
